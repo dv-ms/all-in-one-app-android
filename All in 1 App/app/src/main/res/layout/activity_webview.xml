@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <WebView
+                    android:id="@+id/webMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="15dp">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabOpenDrawer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/icon_list"
+                    android:backgroundTint="#19A1BB"
+                    android:tooltipText="Menu"/>
+
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="#fff"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="20dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/all_in_one"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="All in 1 App"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="20sp"
+                            android:layout_gravity="center_horizontal"
+                            android:textAlignment="center"
+                            android:textStyle="normal"
+                            />
+
+                        <Button
+                            android:id="@+id/btnAllApp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="All Apps"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="#19A1BB"
+                            android:drawableLeft="@drawable/icon_app"
+                            android:textAllCaps="false"/>
+
+
+                        <Button
+                            android:id="@+id/btnReload"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Reload"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="#19A1BB"
+                            android:drawableLeft="@drawable/icon_refresh"
+                            android:textAllCaps="false"/>
+
+                        <Button
+                            android:id="@+id/btnGoForwar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Go Forward"
+                            android:layout_marginTop="10dp"
+                            android:textAlignment="center"
+                            android:backgroundTint="#19A1BB"
+                            android:drawableLeft="@drawable/icon_forword"
+                            android:textAllCaps="false"/>
+
+                        <Button
+                            android:id="@+id/bnClearCache"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Delete Temp Files"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="#19A1BB"
+                            android:drawableLeft="@drawable/icon_delete"
+                            android:textAllCaps="false"/>
+
+                        <Button
+                            android:id="@+id/bnExit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Exit"
+                            android:textAlignment="center"
+                            android:drawableLeft="@drawable/icon_exit"
+                            android:backgroundTint="#19A1BB"
+                            android:textAllCaps="false"/>
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</RelativeLayout>
